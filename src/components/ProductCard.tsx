@@ -19,7 +19,7 @@ export function ProductCard({ product }: { product: Product }) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           alt={fullName(product)}
           loading="lazy"
-          className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          className="h-full w-full object-contain transition duration-700 group-hover:scale-105"
         />
         <span className="absolute left-4 top-4 rounded-full bg-char/80 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-cream backdrop-blur">
           {product.category === 'balm' ? 'Body balm' : 'Smoked salt'}
