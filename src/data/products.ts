@@ -202,7 +202,7 @@ const products: Array<Product> = [
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'A combo pack for the whole family(and that one weird cousin)',
+      '"A combo pack for the whole family(and that one weird cousin)"',
     ],
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'Mixed Bag',
