@@ -83,13 +83,13 @@ const products: Array<Product> = [
     image: '/img/salt-no-heat.png',
     shortDescription: 'Our cold-smoked salt, pure and simple. All smoke, zero heat.',
     description:
-      'This is where it all starts: the same cold-smoked salt that forms the base of every blend we make, with no heat added. Deep, clean smoke and a satisfying crunch — finish a steak, season eggs, rim a glass, or bring campfire flavor to anything that needs it.',
+      'This is where it all starts: the same cold-smoked salt that forms the base of every blend we make, with no heat added. Deep, clean smoke and a satisfying crunch — finish a steak, season eggs, rim a glass, or bring barbeque flavor to anything that needs it.',
     details: [
       'Our signature cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'Great on steak, eggs, veg, and cocktails',
+      'Great on steak, eggs, and cocktails',
     ],
-    ingredients: 'Salt, chili peppers, smoke',
+    ingredients: 'Salt, smoke',
     heat: 'none',
   },
   {
@@ -106,7 +106,7 @@ const products: Array<Product> = [
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'Great on eggs, popcorn, and chicken',
+      'A perfect vegetable campanion',
     ],
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'mild',
@@ -119,13 +119,13 @@ const products: Array<Product> = [
     size: '4 oz (113g)',
     priceCents: 1200,
     image: '/img/salt-stop-no-dont.png',
-    shortDescription: 'Serious heat over deep smoke. You were warned.',
+    shortDescription: 'The perfect ammount of heat over deep smoke.',
     description:
-      'The same cold-smoked salt base, turned up hot. A real, lingering burn for people who like their food to fight back — use it on wings, in dry rubs, on burgers, or anywhere you want smoke and fire together.',
+      'The same cold-smoked salt base, turned up hot. The heat comes on quick and smoothly fades to an enjoyable smokey tang.',
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'Great on wings, rubs, and burgers',
+      'Great on EVERYTHING!,
     ],
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'high',
@@ -138,13 +138,13 @@ const products: Array<Product> = [
     size: '4 oz (113g)',
     priceCents: 1200,
     image: '/img/salt-no-truly-dont.png',
-    shortDescription: 'Our hottest salt by a mile. Seriously — a pinch is plenty.',
+    shortDescription: 'Our hottest salt by a mile. Seriously — a pinch is too much.',
     description:
       'Cold-smoked salt pushed to the edge. This one is for heat chasers only: a tiny pinch brings an intense, building burn wrapped in deep smoke. Start small, keep a glass of milk nearby, and don’t say we didn’t tell you.',
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'Use sparingly — a pinch goes a long way',
+      'Use sparingly — a pinch goes too far',
     ],
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'insane',
