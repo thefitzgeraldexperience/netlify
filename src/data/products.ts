@@ -169,6 +169,44 @@ const products: Array<Product> = [
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'insane',
   },
+    {
+    id: 'Triple Threat Salt Bundle',
+    name: 'Combo Salt Pack',
+    line: "Triple Threat Salt Bundle",
+    category: 'salt',
+    size: '4 oz (113g) x 3',
+    priceCents: 3000,
+    image: '/img/salt-labels-3x.png',
+    shortDescription: 'A combo pack of Smoke Salt, Maybe Don't, and Stop No Don't',
+    description:
+      'Cold-smoked salt and spice that will get you through any cooking situation.',
+    details: [
+      'Built on our cold-smoked salt base',
+      'Made in St. Louis, Missouri',
+      'A combo pack for the whole family',
+    ],
+    ingredients: 'Salt, chili peppers, smoke',
+    heat: 'Mixed Bag',
+  },
+      {
+    id: 'Final Moments Salt Bundle',
+    name: 'Combo Salt Pack',
+    line: "Final Moments Salt Bundle",
+    category: 'salt',
+    size: '4 oz (113g) x 4',
+    priceCents: 4000,
+    image: '/img/salt-labels-4x.png',
+    shortDescription: 'A combo pack of Smoke Salt, Maybe Don't, Stop No Don't, and No Truly Don't',
+    description:
+      'Cold-smoked salt and spice that will get you through any cooking situation and make that one weird cousin happy too.',
+    details: [
+      'Built on our cold-smoked salt base',
+      'Made in St. Louis, Missouri',
+      'A combo pack for the whole family(and that one weird cousin)',
+    ],
+    ingredients: 'Salt, chili peppers, smoke',
+    heat: 'Mixed Bag',
+  },
 ]
 
 export function getProduct(id: string) {
