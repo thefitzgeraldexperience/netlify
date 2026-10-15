@@ -125,7 +125,7 @@ const products: Array<Product> = [
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
-      'Great on EVERYTHING!,
+      'Great on EVERYTHING!',
     ],
     ingredients: 'Salt, chili peppers, smoke',
     heat: 'high',
