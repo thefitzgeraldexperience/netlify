@@ -41,7 +41,7 @@ const products: Array<Product> = [
     shortDescription:
       'A rich recovery balm for tired muscles and hardworking skin.',
     description:
-      'Rally Recoup is the balm you reach for after the long day, the hard workout, or the double shift. Hand-poured in small batches, it melts on contact and works into shoulders, calves, and anywhere that needs a little extra care — leaving skin soft, never greasy.',
+      'What you reach for before a run, the hard workout, or the double shift. Natural and hand-crafted in small batches, it melts on contact and works into any spot that needs a little extra glide and smoothness — whether before or after some action, always Rally Recoup.',
     details: [
       'Hand-poured in small batches',
       'Melts on contact, absorbs without a greasy finish',
@@ -61,7 +61,27 @@ const products: Array<Product> = [
     shortDescription:
       'A nourishing balm made to keep tattooed skin soft and ink looking bold.',
     description:
-      'Nourish was made for people who wear their art. A deeply moisturizing balm that keeps tattooed skin supple and helps your ink look crisp and vibrant, day after day. A little goes a long way.',
+      'Nourish was made for people who wear their art. A deeply moisturizing balm that keeps tattooed skin supple and helps your ink look crisp and vibrant, day after day. Whether you got your tattoo today or 20 years ago, keep it NOURISHED.',
+    details: [
+      'Made for everyday tattoo care',
+      'Deeply moisturizing, a little goes a long way',
+      'Pocket-sized 2 oz tin',
+    ],
+    ingredients:
+      'Hemp seed oil, mango butter, jojoba oil, calendula flower extract, beeswax, candelilla wax, frankincense oil, lavender oil, benzoin resin, rosemary leaf extract',
+  },
+    {
+    id: 'ink-nourish-tub',
+    name: 'Nourish',
+    line: 'The Ink Experience',
+    category: 'balm',
+    size: '8 oz tin',
+    priceCents: 4000,
+    image: '/img/balm-ink-nourish-tub.png',
+    shortDescription:
+      'A nourishing balm made to keep tattooed skin soft and ink looking bold.',
+    description:
+      'Nourish was made for people who wear their art. A deeply moisturizing balm that keeps tattooed skin supple and helps your ink look crisp and vibrant, day after day. Whether you got your tattoo today or 20 years ago, keep it NOURISHED.',
     details: [
       'Made for everyday tattoo care',
       'Deeply moisturizing, a little goes a long way',
