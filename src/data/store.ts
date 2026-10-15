@@ -22,7 +22,7 @@ export function imageUrl(src: string, width: number, height?: number) {
   const params = new URLSearchParams({ url: src, w: String(width), fm: 'webp' })
   if (height) {
     params.set('h', String(height))
-    params.set('fit', 'cover')
+    params.set('fit', 'contain')
   }
   return `/.netlify/images?${params.toString()}`
 }
