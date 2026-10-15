@@ -77,7 +77,7 @@ const products: Array<Product> = [
     category: 'balm',
     size: '8 oz tin',
     priceCents: 4000,
-    image: '/img/balm-ink-nourish-tub.png',
+    image: '/img/balm-ink-nourish-tub-mockup.png',
     shortDescription:
       'A nourishing balm made to keep tattooed skin soft and ink looking bold.',
     description:
