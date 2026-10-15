@@ -79,7 +79,7 @@ const products: Array<Product> = [
     line: 'Smoke Salt',
     category: 'salt',
     size: '4 oz (113g)',
-    priceCents: 1200,
+    priceCents: 1000,
     image: '/img/salt-no-heat.png',
     shortDescription: 'Our cold-smoked salt, pure and simple. All smoke, zero heat.',
     description:
@@ -136,7 +136,7 @@ const products: Array<Product> = [
     line: "No, Truly Don't",
     category: 'salt',
     size: '4 oz (113g)',
-    priceCents: 1200,
+    priceCents: 1500,
     image: '/img/salt-no-truly-dont.png',
     shortDescription: 'Our hottest salt by a mile. Seriously — a pinch is too much.',
     description:
