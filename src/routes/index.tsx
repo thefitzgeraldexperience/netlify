@@ -31,14 +31,13 @@ function Home() {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-char via-char/80 to-char/20" />
-        <div           className="pointer-events-none absolute right-[calc(50%+36rem+2.5rem)] top-1/2 hidden h-[62%] w-auto -translate-y-1/2 opacity-90 min-[1800px]:block" />
-          <img
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-char to-transparent" />
+        <img
           src="/img/tfe_logo.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-[calc(50%+36rem+0.75rem)] top-1/2 hidden h-56 w-auto -translate-y-1/2 opacity-90 min-[1800px]:block"
-          />
+          className="pointer-events-none absolute right-[calc(50%+36rem+2.5rem)] top-1/2 hidden h-[62%] w-auto -translate-y-1/2 opacity-90 min-[1800px]:block"
+        />
         <div className="mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-center px-5 py-24">
           <p className="rise text-xs uppercase tracking-[0.3em] text-ember">
             Small batch · Handmade
