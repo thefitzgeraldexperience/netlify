@@ -32,7 +32,7 @@ function Home() {
           fetchPriority="high"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-char via-char/80 to-char/20" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-char to-transparent" />
+        <div           className="pointer-events-none absolute right-[calc(50%+36rem+2.5rem)] top-1/2 hidden h-[62%] w-auto -translate-y-1/2 opacity-90 min-[1800px]:block" />
           <img
           src="/img/tfe_logo.png"
           alt=""
