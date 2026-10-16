@@ -37,6 +37,12 @@ export function Header() {
             className="relative flex items-center gap-2 rounded-full border border-cream/15 px-4 py-2 text-cream transition hover:border-ember hover:text-ember"
             aria-label={`Cart, ${count} item${count === 1 ? '' : 's'}`}
           >
+          <Link
+            to="/contact"
+            className="hidden rounded-full px-3 py-2 text-ash transition hover:text-cream sm:block"
+          >
+            Contact
+          </Link>  
             <ShoppingBag className="h-4 w-4" />
             <span>Cart</span>
             {count > 0 && (
