@@ -52,7 +52,6 @@ export function Header() {
             )}
           </Link>
         </nav>
-        </nav>
       </div>
     </header>
   )
