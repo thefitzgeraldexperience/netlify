@@ -18,6 +18,12 @@ export function Footer() {
           >
             @thefitzgeraldexperience
           </a>
+          <a
+            href="/contact"
+            className="mt-2 block text-ash transition hover:text-cream"
+          >
+            Contact
+          </a>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-cream/60">Shipping</p>
