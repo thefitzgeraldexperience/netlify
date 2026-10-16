@@ -34,7 +34,7 @@ function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-char via-char/80 to-char/20" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-char to-transparent" />
           <img
-          src="/img/logo.png"
+          src="/img/tfe_logo.png"
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute right-[calc(50%+36rem+0.75rem)] top-1/2 hidden h-56 w-auto -translate-y-1/2 opacity-90 min-[1800px]:block"
