@@ -85,7 +85,7 @@ const products: Array<Product> = [
     details: [
       'Made for everyday tattoo care',
       'Deeply moisturizing, a little goes a long way',
-      'Pocket-sized 8 oz tin',
+      'Back of shop sized 8 oz tub',
     ],
     ingredients:
       'Hemp seed oil, mango butter, jojoba oil, calendula flower extract, beeswax, candelilla wax, frankincense oil, lavender oil, benzoin resin, rosemary leaf extract',
