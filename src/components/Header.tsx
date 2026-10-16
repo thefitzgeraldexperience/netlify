@@ -9,7 +9,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-cream/10 bg-char/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link to="/" className="group flex items-center gap-2.5">
-          <img src="/img/logo.png" alt="" className="h-9 w-auto" />
+          <img src="/img/tfe_logo.png" alt="" className="h-9 w-auto" />
           <span className="flex items-baseline gap-2">
             <span className="font-display text-lg text-cream sm:text-xl">
               The Fitzgerald
