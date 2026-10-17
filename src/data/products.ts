@@ -122,7 +122,7 @@ const products: Array<Product> = [
     image: '/img/salt-maybe-dont.png',
     shortDescription: 'Cold-smoked salt with a gentle warmth that sneaks up on you.',
     description:
-      'Our cold-smoked salt base with just enough heat to make you notice. A friendly, everyday kick that wakes up eggs, popcorn, roasted potatoes, and grilled chicken without taking over.',
+      'Our cold-smoked salt base with just enough heat to make you notice. A friendly, everyday kick that wakes up any vegetable without taking over.',
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
@@ -160,7 +160,7 @@ const products: Array<Product> = [
     image: '/img/salt-no-truly-dont.png',
     shortDescription: 'Our hottest salt by a mile. Seriously — a pinch is too much.',
     description:
-      'Cold-smoked salt pushed to the edge. This one is for heat chasers only: a tiny pinch brings an intense, building burn wrapped in deep smoke. Start small, keep a glass of milk nearby, and don’t say we didn’t tell you.',
+      'Cold-smoked salt pushed to the edge. This one is for heat chasers only: a tiny pinch brings an intense, building burn wrapped in deep smoke. At 1.9 million scoville units, you are in hot chip challenge territory, with a combination of some of the hottest pepper in the world.',
     details: [
       'Built on our cold-smoked salt base',
       'Made in St. Louis, Missouri',
