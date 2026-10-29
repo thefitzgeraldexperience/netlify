@@ -61,7 +61,7 @@ const INGREDIENTS: { name: string; note?: string; body: string }[] = [
 ]
 
 function IngredientsPage() {
-  return (
+  {/* return (
     <div className="mx-auto max-w-xl px-5 py-24">
       <h1 className="font-display text-5xl text-cream">What's in the Tin</h1>
       <p className="mt-4 text-ash">
@@ -91,5 +91,34 @@ function IngredientsPage() {
         diagnose, treat, cure, or prevent any disease. Patch test before use.
       </p>
     </div>
-  )
+  ) */}
+  return (
+  <div className="mx-auto max-w-5xl px-5 py-24">
+    <h1 className="font-display text-5xl text-cream">What's in the Tin</h1>
+    <p className="mt-4 max-w-2xl text-ash">
+      Traditionally, people have turned to these ingredients for skin care.
+      Here's what each is known for helping with.
+    </p>
+
+    <ul className="mt-10 list-disc space-y-4 pl-5 marker:text-ember md:columns-2 md:gap-x-14">
+      {INGREDIENTS.map((i) => (
+        <li key={i.name} className="break-inside-avoid text-ash">
+          <span className="font-display text-lg italic text-cream">
+            {i.name}
+          </span>
+          {i.note && (
+            <span className="ml-2 text-sm text-ember">{i.note}</span>
+          )}
+          <span className="block">{i.body}</span>
+        </li>
+      ))}
+    </ul>
+
+    <p className="mt-10 max-w-2xl text-sm italic text-ash">
+      These traditional uses are provided for background and are not claims
+      about our products. Our balms are cosmetics and are not intended to
+      diagnose, treat, cure, or prevent any disease. Patch test before use.
+    </p>
+  </div>
+)
 }
