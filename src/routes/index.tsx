@@ -58,12 +58,20 @@ function Home() {
             >
               Shop the collection
             </a>
+            {/*
             <Link
               to="/products/$productId"
               params={{ productId: 'rally-recoup' }}
               className="rounded-full border border-cream/25 px-7 py-3.5 font-semibold text-cream transition hover:border-cream"
             >
               Meet Rally Recoup
+            </Link>
+            */}
+            <Link
+              to="/ingredients"
+              className="rounded-full border border-cream/25 px-7 py-3.5 font-semibold text-cream transition hover:border-cream"
+            >
+            The Balm Ingredients
             </Link>
           </div>
         </div>
