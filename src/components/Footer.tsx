@@ -24,6 +24,12 @@ export function Footer() {
           >
             Contact
           </a>
+          <a
+            href="/ingredients"
+            className="mt-2 block text-ash transition hover:text-cream"
+          >
+            Ingredients
+          </a>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-cream/60">Shipping</p>
