@@ -131,8 +131,8 @@ function Home() {
           <ul className="grid gap-4">
             {[
               { icon: Flame, title: 'Cold-smoked salt', body: 'One smoky base, four heat levels — from none to insane.' },
-              { icon: HandHeart, title: 'Hand-poured balms', body: 'Body and ink care made in small batches.' },
-              { icon: Leaf, title: 'Simple & honest', body: 'Thoughtful ingredients, no fuss, no filler.' },
+              { icon: HandHeart, title: 'Hand-poured balms', body: 'Body and ink care made in small batches. (No, they are not spicy!)' },
+              { icon: Leaf, title: 'Simple & honest', body: 'Pure ingredients, no fuss, no filler.' },
             ].map(({ icon: Icon, title, body }) => (
               <li key={title} className="flex gap-4 rounded-2xl border border-cream/10 bg-char/60 p-5">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ember/15 text-ember">
