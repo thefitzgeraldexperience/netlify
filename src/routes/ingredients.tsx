@@ -67,16 +67,16 @@ const INGREDIENTS: { name: string; note?: string; body: string }[] = [
 
 function IngredientsPage() {
   return (
-    <div className="mx-auto max-w-xl px-5 py-24">
+    <div className="mx-auto max-w-4xl px-5 py-24">
       <h1 className="font-display text-5xl text-cream">What's in the Tin</h1>
       <p className="mt-4 text-ash">
         Traditionally, people have turned to these ingredients for skin care.
         Here's what each is known for helping with.
       </p>
 
-      <ul className="mt-10 divide-y divide-cream/10 border-y border-cream/10">
+      <ul className="mt-10 grid gap-x-12 border-t border-cream/10 sm:grid-cols-2">
         {INGREDIENTS.map((i) => (
-          <li key={i.name} className="py-5">
+          <li key={i.name} className="border-b border-cream/10 py-5">
             <h2 className="font-display text-xl italic text-cream">
               {i.name}
               {i.note && (
