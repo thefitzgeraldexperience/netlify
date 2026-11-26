@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import products, { type Product } from '@/data/products'
-import { shippingFor } from '@/data/store'
+import { shippingFor, type Fulfillment } from '@/data/store'
 
 interface CartItem {
   productId: string
@@ -19,6 +19,8 @@ interface CartContextValue {
   subtotalCents: number
   shippingCents: number
   totalCents: number
+  fulfillment: Fulfillment
+  setFulfillment: (fulfillment: Fulfillment) => void
   add: (productId: string, quantity?: number) => void
   setQuantity: (productId: string, quantity: number) => void
   remove: (productId: string) => void
@@ -26,12 +28,14 @@ interface CartContextValue {
 }
 
 const STORAGE_KEY = 'fitzgerald-cart'
+const FULFILLMENT_KEY = 'fitzgerald-fulfillment'
 const MAX_QTY = 20
 
 const CartContext = createContext<CartContextValue | null>(null)
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<Array<CartItem>>([])
+  const [fulfillment, setFulfillment] = useState<Fulfillment>('ship')
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
@@ -50,12 +54,17 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // ignore malformed storage
     }
+    if (localStorage.getItem(FULFILLMENT_KEY) === 'pickup') setFulfillment('pickup')
     setHydrated(true)
   }, [])
 
   useEffect(() => {
     if (hydrated) localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
   }, [items, hydrated])
+
+  useEffect(() => {
+    if (hydrated) localStorage.setItem(FULFILLMENT_KEY, fulfillment)
+  }, [fulfillment, hydrated])
 
   const value = useMemo<CartContextValue>(() => {
     const lines = items.flatMap((item) => {
@@ -66,7 +75,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       (sum, l) => sum + l.product.priceCents * l.quantity,
       0,
     )
-    const shippingCents = shippingFor(subtotalCents)
+    const shippingCents = shippingFor(subtotalCents, fulfillment)
     const clamp = (q: number) => Math.max(1, Math.min(MAX_QTY, Math.round(q)))
 
     return {
@@ -76,6 +85,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       subtotalCents,
       shippingCents,
       totalCents: subtotalCents + shippingCents,
+      fulfillment,
+      setFulfillment,
       add: (productId, quantity = 1) =>
         setItems((prev) => {
           const existing = prev.find((i) => i.productId === productId)
@@ -98,7 +109,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         setItems((prev) => prev.filter((i) => i.productId !== productId)),
       clear: () => setItems([]),
     }
-  }, [items])
+  }, [items, fulfillment])
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
