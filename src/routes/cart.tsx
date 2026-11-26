@@ -16,8 +16,16 @@ export const Route = createFileRoute('/cart')({
 })
 
 function CartPage() {
-  const { lines, subtotalCents, shippingCents, totalCents, setQuantity, remove } =
-    useCart()
+  const {
+    lines,
+    subtotalCents,
+    shippingCents,
+    totalCents,
+    fulfillment,
+    setFulfillment,
+    setQuantity,
+    remove,
+  } = useCart()
 
   if (lines.length === 0) {
     return (
@@ -38,6 +46,7 @@ function CartPage() {
     )
   }
 
+  const pickup = fulfillment === 'pickup'
   const toFreeShipping = FREE_SHIPPING_THRESHOLD_CENTS - subtotalCents
 
   return (
@@ -114,13 +123,41 @@ function CartPage() {
 
         <aside className="h-fit rounded-3xl border border-cream/10 bg-smoke/60 p-6 lg:sticky lg:top-24">
           <h2 className="font-display text-2xl">Order summary</h2>
+          <fieldset className="mt-5 space-y-2 text-sm">
+            <legend className="sr-only">Delivery method</legend>
+            {(
+              [
+                ['ship', 'Ship it to me'],
+                ['pickup', 'Local pickup in St. Louis (free)'],
+              ] as const
+            ).map(([value, label]) => (
+              <label
+                key={value}
+                className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2.5 transition ${
+                  fulfillment === value
+                    ? 'border-ember bg-ember/10 text-cream'
+                    : 'border-cream/15 text-ash hover:text-cream'
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="fulfillment"
+                  value={value}
+                  checked={fulfillment === value}
+                  onChange={() => setFulfillment(value)}
+                  className="accent-ember"
+                />
+                {label}
+              </label>
+            ))}
+          </fieldset>
           <dl className="mt-6 space-y-3 text-sm">
             <div className="flex justify-between">
               <dt className="text-ash">Subtotal</dt>
               <dd>{formatPrice(subtotalCents)}</dd>
             </div>
             <div className="flex justify-between">
-              <dt className="text-ash">Shipping</dt>
+              <dt className="text-ash">{pickup ? 'Pickup' : 'Shipping'}</dt>
               <dd>{shippingCents === 0 ? 'Free' : formatPrice(shippingCents)}</dd>
             </div>
             <div className="flex justify-between border-t border-cream/10 pt-3 text-base font-semibold">
@@ -128,7 +165,7 @@ function CartPage() {
               <dd>{formatPrice(totalCents)}</dd>
             </div>
           </dl>
-          {toFreeShipping > 0 && (
+          {!pickup && toFreeShipping > 0 && (
             <p className="mt-4 rounded-xl bg-ember/10 px-3 py-2 text-xs text-ember">
               Add {formatPrice(toFreeShipping)} more for free shipping.
             </p>
@@ -137,7 +174,9 @@ function CartPage() {
             <PayPalCheckout />
           </div>
           <p className="mt-4 text-center text-xs text-ash">
-            You'll confirm your shipping address with PayPal.
+            {pickup
+              ? "We'll email you to arrange pickup after you pay."
+              : "You'll confirm your shipping address with PayPal."}
           </p>
         </aside>
       </div>
