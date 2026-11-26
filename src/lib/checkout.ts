@@ -13,6 +13,11 @@ const cartSchema = z
   .min(1)
   .max(20)
 
+const checkoutSchema = z.object({
+  items: cartSchema,
+  fulfillment: z.enum(['ship', 'pickup']),
+})
+
 export type CartInput = z.infer<typeof cartSchema>
 
 export const getPaypalConfig = createServerFn({ method: 'GET' }).handler(() => {
@@ -26,8 +31,8 @@ export const getPaypalConfig = createServerFn({ method: 'GET' }).handler(() => {
 })
 
 export const createPaypalOrder = createServerFn({ method: 'POST' })
-  .inputValidator((input: unknown) => cartSchema.parse(input))
-  .handler(async ({ data: cart }) => {
+  .inputValidator((input: unknown) => checkoutSchema.parse(input))
+  .handler(async ({ data: { items: cart, fulfillment } }) => {
     const { paypalRequest, toValue } = await import('./paypal.server')
     const { db } = await import('../../db/index')
     const { orders } = await import('../../db/schema')
@@ -47,7 +52,7 @@ export const createPaypalOrder = createServerFn({ method: 'POST' })
       (sum, l) => sum + l.unitPriceCents * l.quantity,
       0,
     )
-    const shippingCents = shippingFor(subtotalCents)
+    const shippingCents = shippingFor(subtotalCents, fulfillment)
     const totalCents = subtotalCents + shippingCents
 
     const order = await paypalRequest<{ id: string }>('/v2/checkout/orders', {
@@ -76,7 +81,8 @@ export const createPaypalOrder = createServerFn({ method: 'POST' })
         paypal: {
           experience_context: {
             brand_name: 'The Fitzgerald Experience',
-            shipping_preference: 'GET_FROM_FILE',
+            shipping_preference:
+              fulfillment === 'pickup' ? 'NO_SHIPPING' : 'GET_FROM_FILE',
             user_action: 'PAY_NOW',
           },
         },
@@ -186,5 +192,7 @@ export const getOrderSummary = createServerFn({ method: 'GET' })
       shippingCents: order.shippingCents,
       totalCents: order.totalCents,
       firstName: order.payerName?.split(' ')[0] ?? null,
+      // Pickup orders are created with no shipping address.
+      pickup: !order.shippingAddress,
     }
   })
