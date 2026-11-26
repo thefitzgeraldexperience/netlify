@@ -6,8 +6,10 @@ export const CURRENCY = 'USD'
 export const SHIPPING_FLAT_CENTS = 600
 export const FREE_SHIPPING_THRESHOLD_CENTS = 5000
 
-export function shippingFor(subtotalCents: number) {
-  if (subtotalCents === 0) return 0
+export type Fulfillment = 'ship' | 'pickup'
+
+export function shippingFor(subtotalCents: number, fulfillment: Fulfillment = 'ship') {
+  if (subtotalCents === 0 || fulfillment === 'pickup') return 0
   return subtotalCents >= FREE_SHIPPING_THRESHOLD_CENTS ? 0 : SHIPPING_FLAT_CENTS
 }
 
