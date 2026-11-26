@@ -33,7 +33,8 @@ export function Footer() {
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-cream/60">Shipping</p>
-          <p className="mt-2">
+          <p className="mt-2">Free local pickup in St. Louis.</p>
+          <p className="mt-1">
             Free shipping on orders over {formatPrice(FREE_SHIPPING_THRESHOLD_CENTS)}.
           </p>
         </div>

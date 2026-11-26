@@ -42,11 +42,13 @@ function loadSdk(clientId: string, currency: string) {
 type Status = 'loading' | 'ready' | 'disabled' | 'error'
 
 export function PayPalCheckout() {
-  const { items, clear } = useCart()
+  const { items, fulfillment, clear } = useCart()
   const navigate = useNavigate()
   const containerRef = useRef<HTMLDivElement>(null)
   const itemsRef = useRef(items)
   itemsRef.current = items
+  const fulfillmentRef = useRef(fulfillment)
+  fulfillmentRef.current = fulfillment
   const clearRef = useRef(clear)
   clearRef.current = clear
   const [status, setStatus] = useState<Status>('loading')
@@ -68,7 +70,9 @@ export function PayPalCheckout() {
         buttons = window.paypal.Buttons({
           style: { layout: 'vertical', shape: 'pill', color: 'gold', label: 'pay' },
           createOrder: () =>
-            createPaypalOrder({ data: itemsRef.current }),
+            createPaypalOrder({
+              data: { items: itemsRef.current, fulfillment: fulfillmentRef.current },
+            }),
           onApprove: async (data: { orderID: string }) => {
             setMessage(null)
             await capturePaypalOrder({ data: data.orderID })
